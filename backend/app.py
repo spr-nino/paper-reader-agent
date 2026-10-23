@@ -437,6 +437,17 @@ def _save_chunks(doc_id: str, doc: dict) -> list:
 # API 端点
 # ---------------------------------------------------------------------------
 
+@app.get("/healthz")
+async def healthz():
+    """Render / Railway 等平台健康检查用;不鉴权、无副作用。"""
+    return {"status": "ok"}
+
+
+@app.get("/")
+async def root():
+    return {"name": "文献速读 Agent", "docs": "/docs", "health": "/healthz"}
+
+
 @app.post("/api/upload")
 async def upload(file: UploadFile, _=Depends(require_token)):
     filename = file.filename or ""

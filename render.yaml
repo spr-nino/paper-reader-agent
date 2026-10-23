@@ -1,0 +1,22 @@
+# Render Blueprint —— 一键创建后端 Web Service
+# 使用方式:Render 控制台 → New → Blueprint → 选中本仓库 → Apply
+# 官方文档:https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: paper-reader-backend
+    runtime: docker
+    plan: free
+    # 健康检查路径(对应 backend/app.py 的 /healthz)
+    healthCheckPath: /healthz
+    # 环境变量 —— 敏感值在 Render 控制台手动填,不要写在这里
+    envVars:
+      - key: READER_ENV
+        value: production
+      - key: OPENAI_BASE_URL
+        value: https://api.deepseek.com/v1
+      - key: OPENAI_MODEL
+        value: deepseek-v4-pro
+      - key: OPENAI_API_KEY
+        sync: false   # 在 Render 控制台填入你的 DeepSeek key
+      - key: READER_API_TOKEN
+        generateValue: true   # 让 Render 随机生成,复制下来填到前端 UI
