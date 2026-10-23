@@ -1,0 +1,19 @@
+data/
+node_modules/
+__pycache__/
+*.pyc
+.env
+.venv/
+backend/.pytest_cache/
+web/dist/
+
+# Claude Code 本地配置
+.claude/
+
+# 临时日志 / 调试输出
+_*.log
+_*.txt
+_*.json
+*.log
+backend/_*
+web/_*
