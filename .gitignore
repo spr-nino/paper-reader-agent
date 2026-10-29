@@ -17,3 +17,9 @@ _*.json
 *.log
 backend/_*
 web/_*
+
+# 本地 AI 助手内部目录（含记忆/任务注册表，勿入公开仓库）
+.box-agent/
+.box-agent-scratch/
+.workbuddy/
+.pytest_cache/

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "build:track": "node _tmp/materialize-event-tracking-ticket.cjs"
   },
   "dependencies": {
     "vue": "^3.5.13",
@@ -14,5 +15,6 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "vite": "^6.0.7"
-  }
+  },
+  "aiworksEventTrackingBuild": 1
 }
